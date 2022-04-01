@@ -47,9 +47,16 @@ class contaPoupanca extends contaBancaria{
         super(agencia,numero);
         this.tipo = 'poupanca';
     }
+    sacar(valor){
+        if (valor > 500) {
+            return 'operação negada'
+        }
+        this._saldo = this._saldo - valor;
+        }
+
 }
 
-class contaUniversitaria extends contaBancaria {
+class contaUni extends contaBancaria {
     constructor(agencia,numero){
         super(agencia,numero);
         this.tipo = 'universitaria';
